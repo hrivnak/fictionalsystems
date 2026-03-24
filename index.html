@@ -1,49 +1,227 @@
 <!DOCTYPE html>
-<html lang="cs">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Fictional Systems – DocRobot</title>
-  <link rel="stylesheet" href="css/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fictional Systems | DocRobot</title>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; color: #333; margin: 0; padding: 0; background-color: #fcfcfc; }
+        
+        /* Přepínač jazyků */
+        .lang-switch { position: fixed; top: 20px; right: 20px; z-index: 2000; background: rgba(255,255,255,0.8); padding: 5px; border-radius: 5px; }
+        .lang-switch img { width: 30px; cursor: pointer; margin: 0 5px; transition: transform 0.2s; }
+        .lang-switch img:hover { transform: scale(1.2); }
+
+        /* UPRAVENÝ HEADER - Logo vlevo a větší */
+        header { 
+            background: #2c3e50; 
+            color: #fff; 
+            padding: 1.5rem 5%; /* Odsazení 5% z boku pro zarovnání s obsahem */
+            display: flex; 
+            align-items: center; 
+            justify-content: flex-start; /* Posun doleva */
+            gap: 25px; 
+        }
+        header img.logo { height: 75px; width: auto; } /* Zvětšeno o 50% */
+        header h1 { margin: 0; font-size: 2.2rem; }
+        header p { margin: 0; opacity: 0.8; }
+        
+        nav { background: #34495e; padding: 0.7rem; text-align: center; position: sticky; top: 0; z-index: 1000; }
+        nav a { color: white; margin: 0 15px; text-decoration: none; font-weight: bold; }
+
+        .hero-cover { width: 100%; max-height: 400px; overflow: hidden; display: flex; justify-content: center; background: #ddd; }
+        .hero-cover img { width: 100%; object-fit: cover; }
+
+        .container { width: 85%; max-width: 1100px; margin: auto; padding: 2rem 0; }
+        section { margin-bottom: 3rem; padding: 2rem; background: #fff; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
+        
+        .cta-button { background: #e67e22; color: white; padding: 12px 24px; text-decoration: none; border-radius: 5px; display: inline-block; margin-top: 10px; font-weight: bold; }
+        
+        /* Výchozí zobrazení (English) */
+        .lang-cs { display: none; } 
+        .lang-en { display: block; }
+        
+        footer { background: #2c3e50; color: white; text-align: center; padding: 1.5rem 0; margin-top: 2rem; }
+
+        /* Responzivita pro menší obrazovky */
+        @media (max-width: 768px) {
+            header { flex-direction: column; text-align: center; padding: 1rem; }
+            header img.logo { height: 60px; }
+        }
+    </style>
 </head>
 <body>
-  <header>
-    <h1>Fictional Systems</h1>
-    <h2>Produkt: DocRobot</h2>
-  </header>
 
-  <nav>
-    <ul>
-      <li><a href="#about">O produktu</a></li>
-      <li><a href="#features">Funkce</a></li>
-      <li><a href="#contact">Kontakt</a></li>
-    </ul>
-  </nav>
+<div class="lang-switch" style="display: flex; gap: 12px; align-items: center; justify-content: flex-end; min-width: 100px;">
+        <img src="img/flag_en.png" 
+             onclick="setLanguage('en')" 
+             alt="EN" 
+             style="width: 30px; height: 20px; object-fit: cover; cursor: pointer; border-radius: 2px; border: 1px solid rgba(255,255,255,0.1);">
+        
+        <img src="img/flag_cz.png" 
+             onclick="setLanguage('cs')" 
+             alt="CZ" 
+             style="width: 30px; height: 20px; object-fit: cover; cursor: pointer; border-radius: 2px; border: 1px solid rgba(255,255,255,0.1);">
+</div>
+    
+<header>
+    <img src="img/DocRobot_Logo.svg" alt="DocRobot Logo" class="logo">
+    
+    <div>
+        <h1>Fictional Systems</h1>
+        <p class="lang-cs">Inovace v automatizaci dokumentů</p>
+        <p class="lang-en">Innovation in document automation</p>
+    </div>
+    
+    <nav style="display: flex; gap: 25px; flex-grow: 1; justify-content: center; align-items: center;">
+        <a href="#o-produktu" class="lang-cs" style="color: white; text-decoration: none; font-weight: bold;">O produktu</a>
+        <a href="#o-produktu" class="lang-en" style="color: white; text-decoration: none; font-weight: bold;">About</a>
+        
+        <a href="#funkce" class="lang-cs" style="color: white; text-decoration: none; font-weight: bold;">Funkce</a>
+        <a href="#funkce" class="lang-en" style="color: white; text-decoration: none; font-weight: bold;">Features</a>
+        
+        <a href="#demo" class="lang-cs" style="color: white; text-decoration: none; font-weight: bold;">Demo</a>
+        <a href="#demo" class="lang-en" style="color: white; text-decoration: none; font-weight: bold;">Demo</a>
+        
+        <a href="#kontakt" class="lang-cs" style="color: white; text-decoration: none; font-weight: bold;">Kontakt</a>
+        <a href="#kontakt" class="lang-en" style="color: white; text-decoration: none; font-weight: bold;">Contact</a>
+    </nav>
+</header>
 
-  <section id="about">
-    <h3>O produktu</h3>
-    <p>DocRobot je inteligentní nástroj pro správu dokumentace a automatizaci kancelářských procesů.</p>
-  </section>
 
-  <section id="features">
-    <h3>Funkce</h3>
-    <ul>
-      <li>Automatická generace dokumentů</li>
-      <li>Integrace s cloudovými službami</li>
-      <li>Snadné hledání a správa dokumentů</li>
-    </ul>
-  </section>
+<div class="hero-cover">
+    <img src="img/DocRobotGold_Cover.png" alt="DocRobot Cover">
+</div>
 
-  <section id="contact">
-    <h3>Kontakt</h3>
-    <p>Email: info@fictionalsystems.cz</p>
-    <p>Tel: +420 123 456 789</p>
-  </section>
+<div class="container">
+    
+<section id="o-produktu">
+        <div class="lang-cs">
+            <h2>O produktu <span>DocRobot</span></h2>
+            <p><strong>Interní AI asistent pro vaši firmu.</strong> DocRobot představuje revoluci v práci s firemními daty. Na rozdíl od běžných AI nástrojů naše řešení běží lokálně, což zaručuje, že vaše citlivé informace nikdy neopustí stěny vaší společnosti.</p>
+            <p>Systém funguje na principu přirozeného dialogu: položíte otázku a DocRobot během vteřiny prohledá tisíce stran směrnic, smluv a technické dokumentace, aby vám podal přesnou odpověď i s odkazem na konkrétní zdroj.</p>
+        </div>
+        <div class="lang-en">
+            <h2>About <span>DocRobot</span></h2>
+            <p><strong>Internal AI Assistant for your business.</strong> DocRobot represents a revolution in corporate data management. Unlike standard AI tools, our solution runs locally, ensuring your sensitive information never leaves your company's infrastructure.</p>
+            <p>The system works through natural dialogue: you ask a question, and within seconds, DocRobot scans thousands of pages of guidelines, contracts, and technical documentation to provide a precise answer with a direct link to the source.</p>
+        </div>
+    </section>
 
-  <footer>
-    <p>&copy; 2026 Fictional Systems. Všechna práva vyhrazena.</p>
-  </footer>
+    <section id="funkce">
+        <div class="lang-cs">
+            <h2>Hlavní výhody a využití</h2>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                <div>
+                    <h3>🚀 Klíčové funkce</h3>
+                    <ul>
+                        <li><strong>Bezpečí (GDPR friendly):</strong> Data zůstávají u vás.</li>
+                        <li><strong>AI analýza:</strong> Zpracuje PDF, Word i vnitropodnikové směrnice.</li>
+                        <li><strong>Okamžité odpovědi:</strong> Konec zdlouhavého listování dokumenty.</li>
+                        <li><strong>Webové rozhraní:</strong> Intuitivní ovládání pro každého zaměstnance.</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>💼 Typické využití</h3>
+                    <ul>
+                        <li>Interní směrnice a HR předpisy</li>
+                        <li>Analýza smluv a obchodních dat</li>
+                        <li>Technická dokumentace a manuály</li>
+                        <li>Podpora pro zákaznické centrum</li>
+                    </ul>
+                </div>
+            </div>
+            <div style="margin-top: 20px; padding: 15px; background: #f8f9fa; border-left: 5px solid #e67e22;">
+                <strong>💰 Orientační cena:</strong> Jednorázová instalace 40&nbsp;000&nbsp;–&nbsp;80&nbsp;000&nbsp;Kč + měsíční podpora.
+            </div>
+        </div>
 
-  <script src="js/script.js"></script>
+        <div class="lang-en">
+            <h2>Main Benefits & Usage</h2>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                <div>
+                    <h3>🚀 Key Features</h3>
+                    <ul>
+                        <li><strong>Security (GDPR friendly):</strong> Data stays on your servers.</li>
+                        <li><strong>AI Analysis:</strong> Processes PDF, Word, and internal guidelines.</li>
+                        <li><strong>Instant Answers:</strong> No more manual searching through files.</li>
+                        <li><strong>Web Interface:</strong> Intuitive design for every employee.</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>💼 Use Cases</h3>
+                    <ul>
+                        <li>Internal policies and HR regulations</li>
+                        <li>Contract and business data analysis</li>
+                        <li>Technical documentation and manuals</li>
+                        <li>Customer support assistance</li>
+                    </ul>
+                </div>
+            </div>
+            <div style="margin-top: 20px; padding: 15px; background: #f8f9fa; border-left: 5px solid #e67e22;">
+                <strong>💰 Estimated Pricing:</strong> One-time installation 1,600&nbsp;–&nbsp;3,200&nbsp;EUR + monthly support.
+            </div>
+        </div>
+    </section>
+    
+    <section id="demo">
+        <h2 class="lang-cs">Vyzkoušejte DocRobot</h2>
+        <h2 class="lang-en">Try DocRobot</h2>
+        <div style="display: flex; gap: 15px; flex-wrap: wrap;">
+            <a href="video/DocRobot_Demo.webm" class="cta-button">▶ Video Demo</a>
+            <a href="docs/DocRobot_Overview.pdf" class="cta-button" style="background:#3498db">📄 PDF Overview</a>
+            <a href="docs/DocRobot_Presentation.pptx" class="cta-button" style="background:#2c3e50">📊 Presentation (PPTX)</a>
+        </div>
+    </section>
+
+    <section id="kontakt">
+        <h2 class="lang-cs">Kontakt</h2>
+        <h2 class="lang-en">Contact</h2>
+        
+        <p>
+            <strong>Email:</strong> 
+            <a href="mailto:fictionalsystems.info@gmail.com" 
+               style="color: #3498db; text-decoration: none; font-weight: bold;">
+               fictionalsystems.info@gmail.com
+            </a>
+        </p>
+
+        <p>
+            <strong>Tel:</strong> 
+            <a href="tel:+420777722728" 
+               style="color: #3498db; text-decoration: none; font-weight: bold;">
+               +420 777 722 728
+            </a>
+        </p>
+
+        <p class="lang-cs"><strong>Sídlo:</strong> 🚀 Základna Alfa, Mare Tranquillitatis, Měsíc</p>
+        <p class="lang-en"><strong>HQ:</strong> 🚀 Base Alpha, Mare Tranquillitatis, Moon</p>
+    </section>
+
+</div>
+
+<footer>
+    <p>&copy; 2026 Fictional Systems. <span class="lang-cs">Všechna práva vyhrazena.</span><span class="lang-en">All rights reserved.</span></p>
+</footer>
+
+<script>
+    function setLanguage(lang) {
+        const csElems = document.querySelectorAll('.lang-cs');
+        const enElems = document.querySelectorAll('.lang-en');
+        
+        if (lang === 'cs') {
+            csElems.forEach(el => el.style.display = 'block');
+            enElems.forEach(el => el.style.display = 'none');
+        } else {
+            csElems.forEach(el => el.style.display = 'none');
+            enElems.forEach(el => el.style.display = 'block');
+        }
+    }
+    
+    window.onload = function() {
+        setLanguage('en');
+    };
+</script>
+
 </body>
 </html>
