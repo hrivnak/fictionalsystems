@@ -1,3 +1,7 @@
+Web pages: https://hrivnak.github.io/fictionalsystems/
+
+Demo video: https://hrivnak.github.io/fictionalsystems/video/DocRobot_Private-AI_Corporate-Document-Analysis.mp4
+
 ## 💰 Pricing & Operational Model
 
 DocRobot is designed for **total autonomy**. Unlike cloud-based solutions, there are no mandatory monthly fees. You own the hardware and the intelligence.
