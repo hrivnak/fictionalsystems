@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
+
+
+<url>
+  <loc>https://hrivnak.github.io/fictionalsystems/</loc>
+  <lastmod>2026-04-10T00:35:49+00:00</lastmod>
+  <priority>1.00</priority>
+</url>
+<url>
+  <loc>https://hrivnak.github.io/fictionalsystems/docs/DocRobot_Soukroma-AI_Analyza-Dokumentu-Firmy.pdf</loc>
+  <lastmod>2026-04-10T00:35:49+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://hrivnak.github.io/fictionalsystems/docs/DocRobot_Soukroma-AI_Analyza-Dokumentu-Firmy.pptx</loc>
+  <lastmod>2026-04-10T13:24:22+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://hrivnak.github.io/fictionalsystems/docs/DocRobot_Private-AI_Corporate-Document-Analysis.pdf</loc>
+  <lastmod>2026-04-10T00:35:49+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://hrivnak.github.io/fictionalsystems/docs/DocRobot_Private-AI_Corporate-Document-Analysis.pptx</loc>
+  <lastmod>2026-04-10T13:24:22+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+
+
+</urlset>
